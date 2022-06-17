@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>صفحه فرود Inmotion :: دریافت شده از وب روبیک</title>
+    <!-- Start Stylesheets -->
+    <link rel="stylesheet" href={% static 'booklistecss/linearicons.css' %}>
+    <link rel="stylesheet" href={% static "booklistecss/owl.carousel.css" %}>
+    <link rel="stylesheet" href={% static "booklistecss/font-awesome.min.css" %}>
+    <link rel="stylesheet" href={% static "booklistecss/nice-select.css" %}>
+    <link rel="stylesheet" href={% static "booklistecss/magnific-popup.css" %}>
+    <link rel="stylesheet" href={% static "booklistecss/bootstrap4-rtl.min.css" %}>
+    <link rel="stylesheet" href={% static "booklistecss/style.css" %}>
+    <!-- # bezar paeen file html -->
+    <script src={% static "booklistejs/jquery-2.2.4.min.js" %}></script>
+    <script src={% static "booklistejs/popper.min.js" %}></script>
+    <script src={% static "booklistejs/bootstrap.min.js" %}></script>
+    <script src={% static "booklistejs/jquery.ajaxchimp.min.js" %}></script>
+    <script src={% static "booklistejs/owl.carousel.min.js" %}></script>
+    <script src={% static "booklistejs/jquery.nice-select.min.js" %}></script>
+    <script src={% static "booklistejs/jquery.magnific-popup.min.js" %}></script>
+    <script src={% static "booklistejs/scripts.js" %}></script>
+    <!-- End Stylesheets -->
+</head>
+
+<body dir="rtl">
+
+    <div class="main-wrapper-first">
+        <!-- Start Header Menu -->
+        <header>
+            <div class="container">
+                <div class="header-wrap">
+                    <div class="header-top d-flex justify-content-between align-items-center">
+                        <div class="main-menubar d-flex align-items-center">
+                            <div class="menu-bar"><span class="lnr lnr-menu"></span></div>
+                            <nav class="hide">
+                                <a href="index.html">صفحه نخست</a>
+                                <a href="elements.html">مجموعه عناصر</a>
+                            </nav>
+                        </div>
+                        <div class="logo">
+                            <a href="index.html"><img src={% static "pics/logo.png" %} alt="" width="120px" height="80px"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="subscription-area">
+                <div class="container">
+                    <div class="row justify-content-between">
+                        <div class="col-lg-5">
+                            <div class="subscribe-content">
+                                <h3 class="text-white">دنبال جی میگردی؟</h3>
+                                <p class="text-white mb-0">اسم کتاب یا نام نویسنده رو بنویس و بعد بزن بریم....</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <!-- Start Subscribe Form -->
+                            <div id="mc_embed_signup">
+                                <form target="_blank" novalidate
+                                    action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&id=92a4423d01"
+                                    method="get" class="subscription relative">
+                                    <input type="email" name="EMAIL" placeholder="مثلا : فرش قرمز"
+                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'پست الکترونیک'"
+                                        required>
+                                    <div style="position: absolute; right: -5000px;">
+                                        <input type="text" name="" tabindex="-1" value="">
+                                    </div>
+                                    <button class="primary-btn hover d-inline-flex align-items-center"><span
+                                            class="mr-10">بزن بریم!</span><span
+                                            class="lnr lnr-arrow-left"></span></button>
+                                    <div class="info"></div>
+                                </form>
+                            </div>
+                            <!-- End Subscribe Form -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </header>
+        <!-- End Header Menu -->
+    </div>
+    
+    
+    <div class="main-wrapper">
+        <!-- Start Feature Area -->
+        <section class="featured-area">
+            <div class="container">
+                <div class="row">
+                    <!-- Start Feature Box -->
+                    <div class="col-md-4">
+                        <div class="single-feature text-center">
+                            <a href="http://127.0.0.1:8000/bookdetail/"><img src={% static "pics/ghaleheivanat.jpg" %} style="margin-bottom: -5px;" alt="" height="400px"></a>
+                            <h3>قلعه حیوانات</h3>
+                            <h5>نویسنده : جورج اورول</h5>
+                            <p>در هر دستگاهی بهترین نمایش را داشته باشید. فرقی نمی کند در حال استفاده از موبایل، تبلت یا
+                                کامپیوتر هستید.</p>
+                            <a href="http://127.0.0.1:8000/bookdetail/" class="text-uppercase">بیشتر بدانید</a>
+                        </div>
+                    </div>
+                    <!-- End Feature Box -->
+                    <div class="col-md-4">
+                        <div class="single-feature text-center">
+                            <span class="lnr lnr-code"></span>
+                            <h3>کدنویسی تمیز</h3>
+                            <p>کدنویسی کاملا اصولی و استاندارد و کامنت گذاری تمامی بخش های مورد نیاز این قالب را با
+                                سایرین متمایز کرده است.</p>
+                            <a href="#" class="text-uppercase">بیشتر بدانید</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="single-feature text-center">
+                            <span class="lnr lnr-clock"></span>
+                            <h3>بکارگیری در کمترین زمان</h3>
+                            <p>این قالب کاملا آماده و استاندارد را به سادگی و در کمتر از چند دقیقه در پروژه های خود بکار
+                                بگیرید.</p>
+                            <a href="#" class="text-uppercase">بیشتر بدانید</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Feature Area -->
+        <!-- Start Testimonial Area -->
+        <section class="section-gap testimonial-area relative">
+            <div class="overlay overlay-bg"></div>
+            <div class="container relative">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="active-testimonial-carousel">
+                            <!-- Start Testimonial Item -->
+                            <div class="item">
+                                <h3>دانلود فایل های رایگان</h3>
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                    گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
+                                    برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی
+                                    می باشد.</p>
+                                <a href="#">ورود به مرکز دانلود</a>
+                            </div>
+                            <!-- End Testimonial Item -->
+                            <div class="item">
+                                <a href="index.html"><img src={% static "pics/ghaleheivanat.jpg" %} style="margin-bottom: 20px;" alt="" ></a>
+                                <h3>قلعه حیوانات</h3>
+                                <p>کتاب قلعه حیوانات اثر جورج اورول، به‌طور غیر مستقیم اشاره به شرایط حاکم بر شوروی سابق در طول جنگ جهانی دوم دارد.</p>
+                                <a href="booklist.html">اطلاعات بیشتر...</a>
+                            </div>
+                            <div class="item">
+                                <a href="index.html"><img src={% static "pics/ghaleheivanat.jpg" %} style="margin-bottom: 20px;" alt="" ></a>
+                                <h3>قلعه حیوانات</h3>
+                                <p>کتاب قلعه حیوانات اثر جورج اورول، به‌طور غیر مستقیم اشاره به شرایط حاکم بر شوروی سابق در طول جنگ جهانی دوم دارد.</p>
+                                <a href="#">ورود به بلاگ آموزشی</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="next-trigger"><span class="lnr lnr-arrow-left"></span></div>
+                <div class="prev-trigger"><span class="lnr lnr-arrow-right"></span></div>
+            </div>
+        </section>
+        <!-- End Testimonial Area -->
+        <!-- Start Project Area -->
+        <section class="project-area">
+            <div class="container">
+                <div class="row">
+                    <!-- Start Project Box -->
+                    <div class="col-md-4">
+                        <div class="single-project" style="background: url(pics/p1.jpg);">
+                            <div class="overlay overlay-content">
+                                <h4>عنوان نمونه کار</h4>
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                    گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
+                                    برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی
+                                    می باشد.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Project Box -->
+                    <div class="col-md-4">
+                        <div class="single-project" style="background: url(pics/p2.jpg);">
+                            <div class="overlay overlay-content">
+                                <h4>عنوان نمونه کار</h4>
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                    گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
+                                    برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی
+                                    می باشد.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="single-project" style="background: url(pics/p3.jpg);">
+                            <div class="overlay overlay-content">
+                                <h4>عنوان نمونه کار</h4>
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                    گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
+                                    برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی
+                                    می باشد.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Project Area -->
+        <!-- Start Contact Area -->
+        <!-- Start Contact Area -->
+        <!-- End Subscription Area -->
+        <!-- Start footer Area -->
+        <footer class="footer-area relative" style="background: url(pics/f-bg.jpg);">
+            <div class="overlay" style="background: rgba(141, 218, 6, .75);"></div>
+            <div class="container">
+                <div class="footer-content d-flex flex-column align-items-center">
+                    <div class="footer-menu">
+                        <a href="#">صفحه نخست</a>
+                        <a href="#">مجموعه عناصر</a>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                        <a href="#"><i class="fa fa-behance"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End footer Area -->
+    </div>
+</body><!-- This template has been downloaded from Webrubik.com -->
+
+</html>

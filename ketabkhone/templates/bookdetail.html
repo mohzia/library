@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>صفحه داخلی محصول ShopShop :: دریافت شده از وب روبیک</title>
+	<link type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet"/>
+</head>
+<body>
+	<nav class="flex-nav">
+		<div class="container">
+			<div class="grid menu">
+				<div class="column-xs-8 column-md-6">
+					<p id="highlight">ShopShop</p>
+				</div>
+				<div class="column-xs-4 column-md-6">
+					<a href="#" class="toggle-nav">منوی سایت <i class="ion-navicon-round"></i></a>
+					<ul>
+						<li class="nav-item"><a href="#">محصولات</a></li>
+						<li class="nav-item"><a href="#">درباره ما</a></li>
+						<li class="nav-item"><a href="#">پروفایل من</a></li>
+						<li class="nav-item"><a href="#">سبد خرید (0)</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<main>
+		<div class="container">
+			<div class="grid second-nav">
+				<div class="column-xs-12">
+					<nav>
+						<ol class="breadcrumb-list">
+							<li class="breadcrumb-item"><a href="#">صفحه نخست</a></li>
+							<li class="breadcrumb-item"><a href="#">گیاهان آپارتمانی</a></li>
+							<li class="breadcrumb-item active">بنسای</li>
+						</ol>
+					</nav>
+				</div>
+			</div>
+			<div class="grid product">
+				<div class="column-xs-12 column-md-7">
+					<div class="product-gallery">
+						<div class="product-image">
+							<img class="active" src={% static "pics/pic1.jfif" %}>
+						</div>
+						<ul class="image-list">
+							<li class="image-item"><img src={% static "pics/pic1.jfif" %}></li>
+							<li class="image-item"><img src={% static "pics/pic2.jfif" %}></li>
+							<li class="image-item"><img src={% static "pics/pic3.jfif" %}></li>
+						</ul>
+					</div>
+				</div>
+				<div class="column-xs-12 column-md-5">
+					<h1>بنسای</h1>
+					<h2>190 هزار تومان</h2>
+					<div class="description">
+						<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+						<p>چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد.</p>
+					</div>
+					<button class="add-to-cart">افزودن به سبد خرید</button>
+				</div>
+			</div>
+			<div class="grid related-products">
+				<div class="column-xs-12">
+					<h3>این محصولات نیز پیشنهاد می شوند</h3>
+				</div>
+				<div class="column-xs-12 column-md-4">
+					<img src={% static "pics/pic4.jfif" %}>
+					<h4>ساکلنت</h4>
+					<p class="price">190 هزار تومان</p>
+				</div>
+				<div class="column-xs-12 column-md-4">
+					<img src={% static "pics/pic5.jfif" %}>
+					<h4>تراریوم</h4>
+					<p class="price">190 هزار تومان</p>
+				</div>
+				<div class="column-xs-12 column-md-4">
+					<img src={% static "pics/pic6.jfif" %}>
+					<h4>کاکتوس</h4>
+					<p class="price">190 هزار تومان</p>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<div class="grid">
+			<div class="column-xs-12">
+				<p class="copyright">&copy; فارسی و راست چین شده توسط گروه <a href="http://webrubik.com/" target="_blank">وب روبیک</a></p>
+			</div>
+		</div>
+	</footer>
+	<script  src={% static "js/scripts.js" %}></script>
+</body><!-- This template has been downloaded from Webrubik.com -->
+</html>
