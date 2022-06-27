@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>صفحه فرود Inmotion :: دریافت شده از وب روبیک</title>
+    <title>کتابخانه بدو بروو</title>
     <!-- Start Stylesheets -->
     <link rel="stylesheet" href={% static 'booklistecss/linearicons.css' %}>
     <link rel="stylesheet" href={% static "booklistecss/owl.carousel.css" %}>
@@ -38,12 +38,13 @@
                         <div class="main-menubar d-flex align-items-center">
                             <div class="menu-bar"><span class="lnr lnr-menu"></span></div>
                             <nav class="hide">
-                                <a href="index.html">صفحه نخست</a>
+                                <a href="{%url 'booklist page' %}">صفحه نخست</a>
                                 <a href="elements.html">مجموعه عناصر</a>
                             </nav>
                         </div>
                         <div class="logo">
-                            <a href="index.html"><img src={% static "pics/logo.png" %} alt="" width="120px" height="80px"></a>
+                            <a href="index.html"><img src={% static "pics/logo.png" %} alt="" width="120px"
+                                    height="80px"></a>
                         </div>
                     </div>
                 </div>
@@ -80,47 +81,37 @@
                     </div>
                 </div>
             </section>
-            
+
         </header>
         <!-- End Header Menu -->
     </div>
-    
-    
+
+
     <div class="main-wrapper">
         <!-- Start Feature Area -->
         <section class="featured-area">
             <div class="container">
                 <div class="row">
                     <!-- Start Feature Box -->
+                    {% for obj in book %}
                     <div class="col-md-4">
                         <div class="single-feature text-center">
-                            <a href="http://127.0.0.1:8000/bookdetail/"><img src={% static "pics/ghaleheivanat.jpg" %} style="margin-bottom: -5px;" alt="" height="400px"></a>
-                            <h3>قلعه حیوانات</h3>
-                            <h5>نویسنده : جورج اورول</h5>
-                            <p>در هر دستگاهی بهترین نمایش را داشته باشید. فرقی نمی کند در حال استفاده از موبایل، تبلت یا
-                                کامپیوتر هستید.</p>
-                            <a href="http://127.0.0.1:8000/bookdetail/" class="text-uppercase">بیشتر بدانید</a>
+                            <a href="{%url 'bookdetail_page' obj.id %}"><img src="{{ obj.cover.url }}" style="margin-bottom: -5px;" alt="" height="280px"
+                                    width="200"></a>
+                            <h3>{{ obj.name }}</h3>
+                            <p align="right">{{ obj.desk }}...</p>
+                            <font size="-4">منتشر شده توسط: {{ obj.poblisher }}</font>
+                            {% for auth in obj.author.all %}
+                            <br><font size="-4"><a href="{%url 'author_list' auth.id %}">نویسنده : {{ auth.name }}</a></font>
+                            {% endfor %}
+                            {% for cat in obj.category.all %}
+                            <br><a href="{%url 'category_bookliste' cat.id %}"><font size="-4">دسته‌بندی : {{ cat.name }}</font></a><br>
+                            <!-- author, category -->
+                            {% endfor %}
+                            <a href="{%url 'bookdetail_page' obj.id %}" class="text-uppercase">بیشتر بدانید</a>
                         </div>
                     </div>
-                    <!-- End Feature Box -->
-                    <div class="col-md-4">
-                        <div class="single-feature text-center">
-                            <span class="lnr lnr-code"></span>
-                            <h3>کدنویسی تمیز</h3>
-                            <p>کدنویسی کاملا اصولی و استاندارد و کامنت گذاری تمامی بخش های مورد نیاز این قالب را با
-                                سایرین متمایز کرده است.</p>
-                            <a href="#" class="text-uppercase">بیشتر بدانید</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="single-feature text-center">
-                            <span class="lnr lnr-clock"></span>
-                            <h3>بکارگیری در کمترین زمان</h3>
-                            <p>این قالب کاملا آماده و استاندارد را به سادگی و در کمتر از چند دقیقه در پروژه های خود بکار
-                                بگیرید.</p>
-                            <a href="#" class="text-uppercase">بیشتر بدانید</a>
-                        </div>
-                    </div>
+                    {%endfor%}
                 </div>
             </div>
         </section>
@@ -143,15 +134,19 @@
                             </div>
                             <!-- End Testimonial Item -->
                             <div class="item">
-                                <a href="index.html"><img src={% static "pics/ghaleheivanat.jpg" %} style="margin-bottom: 20px;" alt="" ></a>
+                                <a href="index.html"><img src={% static "pics/ghaleheivanat.jpg" %}
+                                        style="margin-bottom: 20px;" alt=""></a>
                                 <h3>قلعه حیوانات</h3>
-                                <p>کتاب قلعه حیوانات اثر جورج اورول، به‌طور غیر مستقیم اشاره به شرایط حاکم بر شوروی سابق در طول جنگ جهانی دوم دارد.</p>
+                                <p>کتاب قلعه حیوانات اثر جورج اورول، به‌طور غیر مستقیم اشاره به شرایط حاکم بر شوروی سابق
+                                    در طول جنگ جهانی دوم دارد.</p>
                                 <a href="booklist.html">اطلاعات بیشتر...</a>
                             </div>
                             <div class="item">
-                                <a href="index.html"><img src={% static "pics/ghaleheivanat.jpg" %} style="margin-bottom: 20px;" alt="" ></a>
+                                <a href="index.html"><img src={% static "pics/ghaleheivanat.jpg" %}
+                                        style="margin-bottom: 20px;" alt=""></a>
                                 <h3>قلعه حیوانات</h3>
-                                <p>کتاب قلعه حیوانات اثر جورج اورول، به‌طور غیر مستقیم اشاره به شرایط حاکم بر شوروی سابق در طول جنگ جهانی دوم دارد.</p>
+                                <p>کتاب قلعه حیوانات اثر جورج اورول، به‌طور غیر مستقیم اشاره به شرایط حاکم بر شوروی سابق
+                                    در طول جنگ جهانی دوم دارد.</p>
                                 <a href="#">ورود به بلاگ آموزشی</a>
                             </div>
                         </div>
@@ -168,7 +163,7 @@
                 <div class="row">
                     <!-- Start Project Box -->
                     <div class="col-md-4">
-                        <div class="single-project" style="background: url(pics/p1.jpg);">
+                        <div class="single-project" style="background: url({% static 'pics/p1.jpg' %})">
                             <div class="overlay overlay-content">
                                 <h4>عنوان نمونه کار</h4>
                                 <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
@@ -180,7 +175,7 @@
                     </div>
                     <!-- End Project Box -->
                     <div class="col-md-4">
-                        <div class="single-project" style="background: url(pics/p2.jpg);">
+                        <div class="single-project" style="background: url({% static 'pics/p2.jpg' %})">
                             <div class="overlay overlay-content">
                                 <h4>عنوان نمونه کار</h4>
                                 <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
@@ -191,7 +186,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="single-project" style="background: url(pics/p3.jpg);">
+                        <div class="single-project" style="background: url({% static 'pics/p3.jpg' %})">
                             <div class="overlay overlay-content">
                                 <h4>عنوان نمونه کار</h4>
                                 <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
@@ -209,7 +204,7 @@
         <!-- Start Contact Area -->
         <!-- End Subscription Area -->
         <!-- Start footer Area -->
-        <footer class="footer-area relative" style="background: url(pics/f-bg.jpg);">
+        <footer class="footer-area relative" style="background: ({% static 'pics/f-bg.jpg' %});">
             <div class="overlay" style="background: rgba(141, 218, 6, .75);"></div>
             <div class="container">
                 <div class="footer-content d-flex flex-column align-items-center">
@@ -225,9 +220,15 @@
                     </div>
                 </div>
             </div>
+
         </footer>
         <!-- End footer Area -->
     </div>
-</body><!-- This template has been downloaded from Webrubik.com -->
+    {% for i in book %}
+    {% for cat in i.category.all %}
+    {{ cat.name }}
+    {% endfor %}
+    {% endfor %}
+</body>
 
 </html>

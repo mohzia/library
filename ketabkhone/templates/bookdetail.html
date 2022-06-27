@@ -5,15 +5,16 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>صفحه داخلی محصول ShopShop :: دریافت شده از وب روبیک</title>
+	<title>کتاب {{ book_obj.name }}</title>
 	<link type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 	<nav class="flex-nav">
 		<div class="container">
 			<div class="grid menu">
 				<div class="column-xs-8 column-md-6">
-					<p id="highlight">ShopShop</p>
+					<p id="highlight">MOHZIA</p>
 				</div>
 				<div class="column-xs-4 column-md-6">
 					<a href="#" class="toggle-nav">منوی سایت <i class="ion-navicon-round"></i></a>
@@ -33,32 +34,45 @@
 				<div class="column-xs-12">
 					<nav>
 						<ol class="breadcrumb-list">
+							{%for category in book_obj.category.all%}
 							<li class="breadcrumb-item"><a href="#">صفحه نخست</a></li>
-							<li class="breadcrumb-item"><a href="#">گیاهان آپارتمانی</a></li>
-							<li class="breadcrumb-item active">بنسای</li>
+							<li class="breadcrumb-item"><a href="{%url 'category_bookliste' category.id %}">{{category.name}}</a></li>
+							<li class="breadcrumb-item active">{{ book_obj.name }}</li>
+							{%endfor%}
 						</ol>
 					</nav>
 				</div>
 			</div>
+			<img src="" alt="">
 			<div class="grid product">
 				<div class="column-xs-12 column-md-7">
 					<div class="product-gallery">
-						<div class="product-image">
-							<img class="active" src={% static "pics/pic1.jfif" %}>
+						<div style="text-align: center;">
+							<img style="width: 25vw " src="{{ book_obj.cover.url }}">
 						</div>
-						<ul class="image-list">
-							<li class="image-item"><img src={% static "pics/pic1.jfif" %}></li>
-							<li class="image-item"><img src={% static "pics/pic2.jfif" %}></li>
-							<li class="image-item"><img src={% static "pics/pic3.jfif" %}></li>
-						</ul>
 					</div>
 				</div>
 				<div class="column-xs-12 column-md-5">
-					<h1>بنسای</h1>
-					<h2>190 هزار تومان</h2>
-					<div class="description">
-						<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
-						<p>چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد.</p>
+					<h1>{{ book_obj.name }}</h1>
+					<div class="description"  style="margin: 0px">
+						<p>
+							{{ book_obj.desk }}
+						</p>
+						<p>
+							<font size="-4">منتشر شده توسط: {{ book_obj.poblisher }}</font>
+							{% for authors in book_obj.author.all%}
+							<br><font size="-4">نویسنده : {{ authors.name }}</font>
+							{%endfor%}
+							{% for category in book_obj.category.all%}
+							<br><font size="-4">موضوع : <a href="{%url 'category_bookliste' category.id %}">{{category.name}}</a></font>
+							{%endfor%}
+						</p>
+						<div>
+							<small>{{likes}}</small>
+							<a href="{%url 'book_like' book_obj.id %}"><i class="fa fa-thumbs-up" style="font-size: 2vw;"></i></a>
+							<small>{{dislike}}</small>
+							<a href="{%url 'book_dislike' book_obj.id%}"><i class="fa fa-thumbs-down" style="font-size: 2vw;"></i></a>
+						</div>
 					</div>
 					<button class="add-to-cart">افزودن به سبد خرید</button>
 				</div>
@@ -88,10 +102,10 @@
 	<footer>
 		<div class="grid">
 			<div class="column-xs-12">
-				<p class="copyright">&copy; فارسی و راست چین شده توسط گروه <a href="http://webrubik.com/" target="_blank">وب روبیک</a></p>
+				<h5 target="_blank"> درصورت بروز هرگونه مشکل ، از تیکت ها استفاده کنید .</h5><br>
 			</div>
 		</div>
 	</footer>
 	<script  src={% static "js/scripts.js" %}></script>
-</body><!-- This template has been downloaded from Webrubik.com -->
+</body>
 </html>

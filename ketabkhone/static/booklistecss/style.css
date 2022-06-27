@@ -674,6 +674,7 @@ td, th {
   -moz-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+
 }
 
 .flex-cell {
@@ -2093,6 +2094,7 @@ body {
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+  
 }
 
 @media (max-width: 991px) {
@@ -2609,3 +2611,4 @@ body {
 .switch-wrap p {
   margin: 0;
 }
+

@@ -8,7 +8,7 @@ class Book (models.Model):
         upload_to='media', default='Default.jpg')
     create = models.DateTimeField(auto_now_add=True)
     modifield = models.DateTimeField(auto_now=True)
-    desk = models.TextField()
+    desk = models.TextField(max_length=250)
     translator = models.CharField(max_length=30)
     # related_name reverse_relation
     poblisher = models.ForeignKey(

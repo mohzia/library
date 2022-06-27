@@ -8,9 +8,6 @@
 </head>
 
 <body>
-    {%for iimm in imgs%}
-    <img src="{{ iimm.url }}" width="200px" height="200px"/>
-    {% endfor %}
     {% for obj in book %}
     <img src="{{ obj.cover.url }}" width="200px" height="200px"/>
     <h3>{{ obj.name }}</h3>
