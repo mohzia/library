@@ -8,30 +8,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>صفحه فرود Inmotion :: دریافت شده از وب روبیک</title>
 	<!-- Start Stylesheets -->
-	<link rel="stylesheet" href="{% static 'btestcss/linearicons.css' %}" />
-	<link rel="stylesheet" href="{% static 'btestcss/owl.carousel.css' %}" />
-	<link rel="stylesheet" href="{% static 'btestcss/font-awesome.min.css' %}" />
-	<link rel="stylesheet" href="{% static 'btestcss/nice-select.css' %}" />
-	<link rel="stylesheet" href="{% static 'btestcss/magnific-popup.css' %}" />
-	<link rel="stylesheet" href="{% static 'btestcss/bootstrap4-rtl.min.css' %}" />
-	<link rel="stylesheet" href="{% static 'btestcss/style.css' %}" />
-	<script src="{% static 'btestjs/jquery-2.2.4.min.js' %}"></script>
-	<script src="{% static 'btestjs/popper.min.js' %}"></script>
-	<script src="{% static 'btestjs/bootstrap.min.js' %}"></script>
-	<script src="{% static 'btestjs/jquery.ajaxchimp.min.js' %}"></script>
-	<script src="{% static 'btestjs/owl.carousel.min.js' %}"></script>
-	<script src="{% static 'btestjs/jquery.nice-select.min.js' %}"></script>
-	<script src="{% static 'btestjs/jquery.magnific-popup.min.js' %}"></script>
-	<script src="{% static 'btestjs/scripts.js' %}"></script>
-	<!-- End Stylesheets -->
+	<link rel="stylesheet" href="{% static 'btestcss/css.css' %}" />
 </head>
 
 <body dir="rtl">
-
-	{% for objs in obj_arr %}
-	{% for answer in objs.answers.all %}
-	<h1>{{ answer.someattribute }}</h1>
-	{% endfor %}{% endfor %}
-</body><!-- This template has been downloaded from Webrubik.com -->
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<form class="example" action="action_page.php">
+			<input type="text" placeholder="Search.." name="search">
+			<button type="submit"><i class="fa fa-search"></i></button>
+		</form>
+</body>
 
 </html>

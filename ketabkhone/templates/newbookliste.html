@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>کتاب {{ book_obj.name }}</title>
+	<link type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<nav class="flex-nav">
+		<div class="container">
+			<div class="grid menu">
+				<div class="column-xs-8 column-md-6">
+					<p id="highlight">MOHZIA</p>
+					<small>خوش آمدی {{user}}</small>
+				</div>
+				<div class="column-xs-4 column-md-6">
+					<a href="#" class="toggle-nav">منوی سایت <i class="ion-navicon-round"></i></a>
+					<ul>
+						<li class="nav-item"><a href="#">محصولات</a></li>
+						<li class="nav-item"><a href="#">درباره ما</a></li>
+						<li class="nav-item"><a href="#">پروفایل من</a></li>
+						<li class="nav-item"><a href="#">سبد خرید (0)</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<main>
+        <div class="main-wrapper">
+            <!-- Start Feature Area -->
+            <section class="featured-area">
+                <div class="container">
+                    <div class="row">
+                        <!-- Start Feature Box -->
+                        {% for obj in book %}
+                        <div class="col-md-4">
+                            <div class="single-feature text-center">
+                                <a href="{%url 'bookdetail_page' obj.id %}"><img src="{{ obj.cover.url }}" style="margin-bottom: -5px;" alt="" height="280px"
+                                        width="200"></a>
+                                <h3>{{ obj.name }}</h3>
+                                <p align="right">{{ obj.desk }}...</p>
+                                <font size="-4">منتشر شده توسط: {{ obj.poblisher }}</font>
+                                <br><font size="-4">نویسنده : </font>
+                                    {% for auth in obj.author.all %}<font size="-4"><a href="{%url 'author_list' auth.id %}"> {{ auth.name }}</a></font>
+                                {% endfor %}
+                                <br><font size="-4">دسته‌بندی :</font>
+                                {% for cat in obj.category.all %}
+                                <font size="-4">
+                                <a href="{%url 'category_bookliste' cat.id %}"> {{ cat.name }}</font></a>
+                                <!-- author, category -->
+                                {% endfor %}
+                                <br><a href="{%url 'bookdetail_page' obj.id %}" class="text-uppercase">بیشتر بدانید</a>
+                            </div>
+                        </div>
+                        {%endfor%}
+                    </div>
+                </div>
+            </section>
+            <!-- End Feature Area -->
+            <!-- Start Testimonial Area -->
+            <section class="section-gap testimonial-area relative">
+                <div class="overlay overlay-bg"></div>
+                <div class="container relative">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <div class="active-testimonial-carousel">
+                                <!-- Start Testimonial Item -->
+                                <div class="item">
+                                    <h3>دانلود فایل های رایگان</h3>
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                        گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
+                                        برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی
+                                        می باشد.</p>
+                                    <a href="#">ورود به مرکز دانلود</a>
+                                </div>
+                                <!-- End Testimonial Item -->
+                                <div class="item">
+                                    <a href="index.html"><img src={% static "pics/ghaleheivanat.jpg" %}
+                                            style="margin-bottom: 20px;" alt=""></a>
+                                    <h3>قلعه حیوانات</h3>
+                                    <p>کتاب قلعه حیوانات اثر جورج اورول، به‌طور غیر مستقیم اشاره به شرایط حاکم بر شوروی سابق
+                                        در طول جنگ جهانی دوم دارد.</p>
+                                    <a href="booklist.html">اطلاعات بیشتر...</a>
+                                </div>
+                                <div class="item">
+                                    <a href="index.html"><img src={% static "pics/ghaleheivanat.jpg" %}
+                                            style="margin-bottom: 20px;" alt=""></a>
+                                    <h3>قلعه حیوانات</h3>
+                                    <p>کتاب قلعه حیوانات اثر جورج اورول، به‌طور غیر مستقیم اشاره به شرایط حاکم بر شوروی سابق
+                                        در طول جنگ جهانی دوم دارد.</p>
+                                    <a href="#">ورود به بلاگ آموزشی</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="next-trigger"><span class="lnr lnr-arrow-left"></span></div>
+                    <div class="prev-trigger"><span class="lnr lnr-arrow-right"></span></div>
+                </div>
+            </section>
+            <!-- End Testimonial Area -->
+            <!-- Start Project Area -->
+            <section class="project-area">
+                <div class="container">
+                    <div class="row">
+                        <!-- Start Project Box -->
+                        <div class="col-md-4">
+                            <div class="single-project" style="background: url({% static 'pics/p1.jpg' %})">
+                                <div class="overlay overlay-content">
+                                    <h4>عنوان نمونه کار</h4>
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                        گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
+                                        برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی
+                                        می باشد.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Project Box -->
+                        <div class="col-md-4">
+                            <div class="single-project" style="background: url({% static 'pics/p2.jpg' %})">
+                                <div class="overlay overlay-content">
+                                    <h4>عنوان نمونه کار</h4>
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                        گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
+                                        برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی
+                                        می باشد.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="single-project" style="background: url({% static 'pics/p3.jpg' %})">
+                                <div class="overlay overlay-content">
+                                    <h4>عنوان نمونه کار</h4>
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                        گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
+                                        برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی
+                                        می باشد.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End Project Area -->
+            <!-- Start Contact Area -->
+            <!-- Start Contact Area -->
+            <!-- End Subscription Area -->
+            <!-- Start footer Area -->
+            <footer class="footer-area relative" style="background: ({% static 'pics/f-bg.jpg' %});">
+                <div class="overlay" style="background: rgba(141, 218, 6, .75);"></div>
+                <div class="container">
+                    <div class="footer-content d-flex flex-column align-items-center">
+                        <div class="footer-menu">
+                            <a href="{%url 'booklist page' %}">صفحه نخست</a>
+                            <a href="#">مجموعه عناصر</a>
+                        </div>
+                        <div class="footer-social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                            <a href="#"><i class="fa fa-behance"></i></a>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="column-xs-12">
+                            <h5 target="_blank"> درصورت بروز هرگونه مشکل ، از <a href="">تیکت ها</a> استفاده کنید .</h5><br>
+                        </div>
+                    </div>
+                </div>
+    
+            </footer>
+            <!-- End footer Area -->
+        </div>
+        {% for i in book %}
+        {% for cat in i.category.all %}
+        {{ cat.name }}
+        {% endfor %}
+        {% endfor %}
+		</main>
+	<footer>
+		<div class="grid">
+			<div class="column-xs-12">
+				<h5 target="_blank"> درصورت بروز هرگونه مشکل ، از <a href="">تیکت ها</a> استفاده کنید .</h5><br>
+			</div>
+		</div>
+	</footer>
+	<script  src={% static "js/scripts.js" %}></script>
+</body>
+</html>

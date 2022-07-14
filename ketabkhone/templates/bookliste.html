@@ -61,19 +61,9 @@
                         <div class="col-lg-6">
                             <!-- Start Subscribe Form -->
                             <div id="mc_embed_signup">
-                                <form target="_blank" novalidate
-                                    action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&id=92a4423d01"
-                                    method="get" class="subscription relative">
-                                    <input type="email" name="EMAIL" placeholder="مثلا : فرش قرمز"
-                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'پست الکترونیک'"
-                                        required>
-                                    <div style="position: absolute; right: -5000px;">
-                                        <input type="text" name="" tabindex="-1" value="">
-                                    </div>
-                                    <button class="primary-btn hover d-inline-flex align-items-center"><span
-                                            class="mr-10">بزن بریم!</span><span
-                                            class="lnr lnr-arrow-left"></span></button>
-                                    <div class="info"></div>
+                                <form target="" method="GET">
+                                   {{form}}
+                                   <input type="submit" value="search">
                                 </form>
                             </div>
                             <!-- End Subscribe Form -->
@@ -101,14 +91,16 @@
                             <h3>{{ obj.name }}</h3>
                             <p align="right">{{ obj.desk }}...</p>
                             <font size="-4">منتشر شده توسط: {{ obj.poblisher }}</font>
-                            {% for auth in obj.author.all %}
-                            <br><font size="-4"><a href="{%url 'author_list' auth.id %}">نویسنده : {{ auth.name }}</a></font>
+                            <br><font size="-4">نویسنده : </font>
+                                {% for auth in obj.author.all %}<font size="-4"><a href="{%url 'author_list' auth.id %}"> {{ auth.name }}</a></font>
                             {% endfor %}
+                            <br><font size="-4">دسته‌بندی :</font>
                             {% for cat in obj.category.all %}
-                            <br><a href="{%url 'category_bookliste' cat.id %}"><font size="-4">دسته‌بندی : {{ cat.name }}</font></a><br>
+                            <font size="-4">
+                            <a href="{%url 'category_bookliste' cat.id %}"> {{ cat.name }}</font></a>
                             <!-- author, category -->
                             {% endfor %}
-                            <a href="{%url 'bookdetail_page' obj.id %}" class="text-uppercase">بیشتر بدانید</a>
+                            <br><a href="{%url 'bookdetail_page' obj.id %}" class="text-uppercase">بیشتر بدانید</a>
                         </div>
                     </div>
                     {%endfor%}
@@ -209,7 +201,7 @@
             <div class="container">
                 <div class="footer-content d-flex flex-column align-items-center">
                     <div class="footer-menu">
-                        <a href="#">صفحه نخست</a>
+                        <a href="{%url 'booklist page' %}">صفحه نخست</a>
                         <a href="#">مجموعه عناصر</a>
                     </div>
                     <div class="footer-social">

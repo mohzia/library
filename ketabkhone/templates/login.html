@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ورود</title>
+	<link type="text/css" href={% static "logincss/bootstrap-rtl.min.css" %}  rel="stylesheet"/>
+	<link type="text/css" href={% static "logincss/font-awesome.min.css" %} rel="stylesheet"/>
+	<link type="text/css" href={% static "logincss/style.css" %} rel="stylesheet" />
+	<script src={% static "loginjs/jquery-3.1.1.min.js" %}></script>
+	<script src={% static "loginjs/bootstrap.min.js" %}></script>
+</head>
+<body dir="rtl" style="background-image: url('{% static 'pics/bg.jpg' %}')">>
+	<div class="container">
+		<div class="d-flex justify-content-center h-100">
+			<div class="card">
+				<div class="card-header">
+					<h3>ورود</h3>
+					<div class="d-flex justify-content-end social_icon">
+						<span><i class="fab fa-facebook-square"></i></span>
+						<span><i class="fab fa-google-plus-square"></i></span>
+						<span><i class="fab fa-twitter-square"></i></span>
+					</div>
+				</div>
+				<div class="card-body">
+					<form method="post">
+						{% csrf_token %}
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text input-icon"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" class="form-control" id="txt-username" placeholder="نام کاربری" name="loginusername">
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text input-icon"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" class="form-control" id="txt-password" placeholder="رمز عبور" name="loginpassword">
+						</div>
+						<div class="row align-items-center remember">
+							<input type="checkbox">مرا بخاطر بسپار
+						</div>
+						<div class="form-group">
+							<input type="submit" value="ورود" class="btn float-right login_btn">
+						</div>
+					</form>
+				</div>
+				<div class="card-footer">
+					<div class="d-flex justify-content-center links">
+						هنوز ثبت نام نکرده اید؟<a href="#">ثبت نام</a>
+					</div>
+					<div class="d-flex justify-content-center">
+						<a href="#">بازگردانی رمز عبور!</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body><!-- This template has been downloaded from Webrubik.com -->
+</html>
+
+
